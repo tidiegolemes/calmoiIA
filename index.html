@@ -5,34 +5,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CalmoIA - Seu Agente Pessoal de Apoio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>CalmoIA: Seu Suporte 24/7</h1>
-        <p>Apoio validado em TCC para ansiedade e depressão.</p>
+    <header class="hero-section">
+        <div class="container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/150x50/8a2be2/ffffff?text=CalmoIA+Logo" alt="CalmoIA Logo">
+            </div>
+            <h1>CalmoIA: Sua IA para o Bem-Estar Mental.</h1>
+            <p class="tagline">Apoio contínuo e personalizado com técnicas de TCC e Mindfulness.</p>
+            <button class="cta-button">Comece Agora</button>
+        </div>
     </header>
 
     <main>
-        <section id="explicacao">
-            <h2>Como Funciona?</h2>
-            <p>O CalmoIA utiliza Inteligência Artificial para aplicar técnicas de Reestruturação Cognitiva e Mindfulness no momento em que você precisa. Ele é um complemento à sua terapia, focado em ferramentas práticas e imediatas.</p>
-            <p>Para começar a usar, abra o chat abaixo ou nos adicione no WhatsApp (em breve).</p>
+        <section id="como-funciona" class="section-padding">
+            <div class="container">
+                <h2>Como a CalmoIA Te Ajuda?</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3><i class="icon-chat"></i> Converse a Qualquer Hora</h3>
+                        <p>Disponível 24/7 para você conversar sobre seus sentimentos e pensamentos.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="icon-tcc"></i> Técnicas Terapêuticas</h3>
+                        <p>Aplique Reestruturação Cognitiva, Mindfulness e Ativação Comportamental.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="icon-progress"></i> Acompanhe seu Progresso</h3>
+                        <p>Monitore seu humor e veja sua evolução ao longo do tempo.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="icon-support"></i> Complemento Profissional</h3>
+                        <p>Não substitui o terapeuta, mas oferece suporte diário validado.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <div id="chat-container">
-            <div id="chat-box">
-                <div class="message bot-message">Olá! Sou o CalmoIA. Como você está se sentindo hoje?</div>
+        <section id="beneficios" class="section-padding bg-light">
+            <div class="container">
+                <h2>Os Benefícios da CalmoIA no Seu Dia a Dia</h2>
+                <div class="benefits-list">
+                    <ul>
+                        <li><i class="icon-check"></i> Redução da Ansiedade e Estresse</li>
+                        <li><i class="icon-check"></i> Melhoria do Humor e Resiliência</li>
+                        <li><i class="icon-check"></i> Maior Autoconhecimento e Controle Emocional</li>
+                        <li><i class="icon-check"></i> Suporte Imediato em Momentos de Crise</li>
+                        <li><i class="icon-check"></i> Desenvolvimento de Hábitos Saudáveis</li>
+                    </ul>
+                </div>
             </div>
-            <input type="text" id="user-input" placeholder="Digite sua mensagem...">
-            <button id="send-button">Enviar</button>
-        </div>
+        </section>
+
+        <section id="para-quem" class="section-padding">
+            <div class="container">
+                <h2>A CalmoIA é Para Você Que...</h2>
+                <div class="target-audience">
+                    <p>Busca apoio para gerenciar ansiedade e depressão.</p>
+                    <p>Quer complementar sua terapia tradicional com ferramentas digitais.</p>
+                    <p>Deseja desenvolver maior inteligência emocional.</p>
+                    <p>Precisa de um suporte discreto e acessível a qualquer hora.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="planos" class="section-padding bg-light">
+            <div class="container">
+                <h2>Escolha o Plano Ideal para o Seu Bem-Estar</h2>
+                <div class="plans-grid">
+                    <div class="plan-card">
+                        <h3>Plano Mensal</h3>
+                        <p class="price">R$ XX,XX/mês</p>
+                        <ul>
+                            <li>Acesso ilimitado ao chat</li>
+                            <li>Técnicas de TCC e Mindfulness</li>
+                            <li>Relatórios de progresso</li>
+                        </ul>
+                        <button class="cta-button secondary-cta">Assinar Agora</button>
+                    </div>
+                    <div class="plan-card featured-plan">
+                        <h3>Plano Anual</h3>
+                        <p class="price">R$ XXX,XX/ano</p>
+                        <p class="discount">Economize 20%!</p>
+                        <ul>
+                            <li>Todos os benefícios do plano mensal</li>
+                            <li>Sessões de meditação exclusivas</li>
+                            <li>Suporte prioritário</li>
+                        </ul>
+                        <button class="cta-button">Assinar Agora</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quem-somos" class="section-padding">
+            <div class="container">
+                <h2>Quem Somos</h2>
+                <p>A CalmoIA nasceu da paixão por inovação e bem-estar. Nossa missão é democratizar o acesso a ferramentas de saúde mental, oferecendo um apoio inteligente, empático e baseado em evidências científicas. Contamos com a consultoria de psicólogos e especialistas em TCC para garantir a qualidade de cada interação.</p>
+            </div>
+        </section>
+
+        <section id="chat-widget" class="section-padding">
+            <div class="container">
+                <h2>Converse com a CalmoIA Agora!</h2>
+                <div id="chat-container">
+                    <div id="chat-box">
+                        <div class="message bot-message">Olá! Sou o CalmoIA. Como você está se sentindo hoje?</div>
+                    </div>
+                    <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+                    <button id="send-button">Enviar</button>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2025 CalmoIA. Sempre buscando apoio profissional para saúde mental.</p>
+        <div class="container">
+            <p>&copy; 2025 CalmoIA. Sempre buscando apoio profissional para saúde mental.</p>
+            <nav>
+                <a href="#como-funciona">Como Funciona</a> |
+                <a href="#beneficios">Benefícios</a> |
+                <a href="#planos">Planos</a> |
+                <a href="#quem-somos">Quem Somos</a> |
+                <a href="#">Termos de Uso</a> |
+                <a href="#">Política de Privacidade</a>
+            </nav>
+        </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Smooth scrolling para os botões de CTA
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('chat-widget').scrollIntoView({ behavior: 'smooth' });
+        });
+        document.querySelector('.secondary-cta').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('planos').scrollIntoView({ behavior: 'smooth' });
+        });
+        // Links do footer também
+        document.querySelectorAll('footer nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if(this.hash && this.hash.startsWith('#')) { // Evita links externos
+                    e.preventDefault();
+                    document.querySelector(this.hash).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
