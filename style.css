@@ -1,19 +1,20 @@
-/* Paleta de Cores CalmoIA: Roxo e Lilás */
+/* Paleta de Cores CalmoIA: Lilás Suave e Verde Menta */
 :root {
-    --primary-color: #8a2be2; /* Azul Violeta / Roxo Principal */
-    --secondary-color: #9370DB; /* Púrpura Médio / Lilás Acento */
-    --tertiary-color: #E6E6FA; /* Lavanda / Fundo Suave */
+    --primary-color: #A3A1F4; /* Lilás Suave - Cor de Destaque */
+    --secondary-color: #79a69d; /* Verde Menta/Suave - Cor de Ação */
+    --tertiary-color: #F8F8FF; /* Fundo Lavanda Quase Branco */
     --text-dark: #333;
     --text-light: #f4f4f4;
-    --border-color: #ccc;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --bot-bubble: #f0e6fa; /* Fundo mais claro para balão do bot */
-    --user-bubble: #d8bfd8; /* Lilás mais claro para balão do usuário */
+    --border-color: #ddd;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --bot-bubble: #F0F4FF; /* Balão do Bot: Azul/Lilás muito claro */
+    --user-bubble: #e1f2e1; /* Balão do Usuário: Verde muito claro */
+    --font-family: 'Montserrat', sans-serif;
 }
 
 /* Base Geral */
 body {
-    font-family: 'Montserrat', Arial, sans-serif; /* Usando a fonte do Google */
+    font-family: var(--font-family);
     margin: 0;
     padding: 0;
     background-color: var(--tertiary-color);
@@ -22,29 +23,29 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 25px;
 }
 
 .section-padding {
-    padding: 60px 0;
+    padding: 80px 0;
 }
 
 .bg-light {
-    background-color: #f8f8ff; /* Um toque de branco lilás */
+    background-color: #ffffff; /* Seções brancas para contraste */
 }
 
 h1, h2, h3 {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--primary-color);
     text-align: center;
     margin-bottom: 30px;
 }
 
-h1 { font-size: 2.8em; }
-h2 { font-size: 2.2em; }
-h3 { font-size: 1.6em; }
+h1 { font-size: 3em; }
+h2 { font-size: 2.5em; }
+h3 { font-size: 1.8em; }
 
 p {
     text-align: center;
@@ -53,187 +54,143 @@ p {
 
 /* Header / Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: var(--text-light);
-    padding: 80px 0;
+    background: var(--tertiary-color);
+    color: var(--text-dark);
+    padding: 100px 0 50px;
     text-align: center;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .hero-section .logo {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .hero-section .logo img {
-    max-width: 180px;
+    max-width: 200px;
     height: auto;
-    background-color: white; /* Fundo para a logo placeholder */
-    padding: 5px;
-    border-radius: 8px;
+    /* Adaptação para paleta suave */
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
 }
 
 .hero-section h1 {
-    color: white;
-    font-size: 3.5em;
+    color: var(--primary-color);
+    font-size: 4em;
     margin-bottom: 10px;
+    font-weight: 800;
 }
 
 .hero-section .tagline {
-    font-size: 1.3em;
-    margin-bottom: 30px;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px;
 }
 
 .cta-button {
-    background-color: white;
-    color: var(--primary-color);
-    padding: 15px 30px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 18px 40px;
     border: none;
-    border-radius: 30px;
-    font-size: 1.1em;
-    font-weight: 700;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-decoration: none; /* Para usar em tags <a> */
+    text-decoration: none;
     display: inline-block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button:hover {
-    background-color: var(--tertiary-color);
-    color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.secondary-cta { /* Para botões secundários, como nos planos */
-    background-color: var(--secondary-color);
-    color: var(--text-light);
-}
-
-.secondary-cta:hover {
     background-color: var(--primary-color);
-    color: var(--text-light);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Seção: Como Funciona (Features Grid) */
-.features-grid {
+/* Seções de Conteúdo */
+.features-grid, .stats-grid, .plans-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 40px;
     text-align: center;
 }
+.features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+.plans-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
 
-.feature-item {
+.card {
     background-color: white;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--shadow-color);
     transition: transform 0.3s ease;
 }
 
-.feature-item:hover {
+.card:hover {
     transform: translateY(-5px);
 }
 
-.feature-item h3 {
-    font-size: 1.4em;
+.card h3 {
     color: var(--secondary-color);
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    margin-top: 0;
+    font-size: 1.5em;
 }
 
-.feature-item p {
-    font-size: 0.95em;
-    color: #555;
+.stat-number {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
 }
 
-/* Ícones (Placeholder - você pode usar Font Awesome ou svgs) */
-.icon-chat::before { content: '💬'; }
-.icon-tcc::before { content: '🧠'; }
-.icon-progress::before { content: '📈'; }
-.icon-support::before { content: '🤝'; }
-.icon-check::before { content: '✅'; color: var(--primary-color); margin-right: 8px; }
-
-
-/* Seção: Benefícios */
-.benefits-list {
-    max-width: 600px;
-    margin: 30px auto 0 auto;
-    text-align: left;
+.stat-label {
+    font-size: 1em;
+    color: #666;
 }
-.benefits-list ul {
+
+/* Seção Para Quem É */
+#para-quem ul {
     list-style: none;
     padding: 0;
-}
-.benefits-list li {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-}
-
-
-/* Seção: Para Quem */
-.target-audience {
-    max-width: 700px;
+    max-width: 800px;
     margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.target-audience p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    color: #555;
-}
-
-
-/* Seção: Planos */
-.plans-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-    text-align: center;
+#para-quem li {
+    background-color: var(--user-bubble);
+    color: #444;
+    padding: 15px 25px;
+    margin: 8px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.05em;
 }
 
+/* Seção Planos */
 .plan-card {
-    background-color: white;
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--border-color);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.plan-card.featured-plan {
-    border: 3px solid var(--primary-color);
-    transform: scale(1.03);
-    box-shadow: 0 8px 20px rgba(138, 43, 226, 0.3);
+.plan-card.featured {
+    border-color: var(--primary-color);
+    background-color: var(--tertiary-color);
 }
-
-.plan-card h3 {
-    font-size: 1.8em;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
 .plan-card .price {
-    font-size: 2.5em;
+    font-size: 2.8em;
     font-weight: 700;
     color: var(--secondary-color);
-    margin-bottom: 10px;
 }
-
-.plan-card .discount {
-    color: #e74c3c; /* Vermelho para desconto */
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
 .plan-card ul {
     list-style: none;
     padding: 0;
@@ -241,153 +198,75 @@ p {
     margin-bottom: 30px;
 }
 
-.plan-card li {
-    font-size: 1em;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-
-/* Seção: Quem Somos */
-#quem-somos p {
-    max-width: 700px;
-    margin: 30px auto;
-    font-size: 1.1em;
-    color: #555;
-}
-
-
 /* Chat Widget */
 #chat-widget {
-    background-color: var(--tertiary-color);
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
 }
+
+#chat-widget h2 {
+    color: white;
+}
+
 #chat-container {
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 30px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    max-width: 600px; /* Limita a largura do chat */
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 650px;
+    margin: 30px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 #chat-box {
-    height: 400px;
-    overflow-y: auto;
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    background-color: #fcfcfc;
-}
-
-.message {
-    padding: 12px;
-    border-radius: 20px; /* Bordas mais arredondadas */
-    margin-bottom: 10px;
-    max-width: 80%;
-    clear: both;
-    font-size: 0.95em;
-    line-height: 1.4;
+    height: 450px;
+    /* Cores de balão conforme paleta suave */
 }
 
 .bot-message {
     background-color: var(--bot-bubble);
-    float: left;
-    border-top-left-radius: 5px; /* Bordas mais suaves */
+    color: var(--text-dark);
 }
 
 .user-message {
     background-color: var(--user-bubble);
-    float: right;
-    border-top-right-radius: 5px; /* Bordas mais suaves */
+    color: var(--text-dark);
 }
 
 #user-input {
-    flex-grow: 1; /* Ocupa o espaço disponível */
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 25px; /* Campo de input mais arredondado */
-    margin-right: 10px;
-    font-size: 1em;
+    border-radius: 25px;
+    border: 1px solid var(--primary-color);
 }
 
 #send-button {
-    padding: 12px 20px;
     background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 25px; /* Botão mais arredondado */
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
+    border-radius: 25px;
 }
 
 #send-button:hover {
     background-color: var(--secondary-color);
 }
 
-/* Flexbox para o input e botão de envio */
-#chat-container > div:last-child { /* Seleciona o div que contém input e botão */
-    display: flex;
-    align-items: center;
-}
-
-
 /* Footer */
 footer {
     background-color: var(--primary-color);
-    color: var(--text-light);
+    color: white;
     padding: 40px 0;
-    text-align: center;
-    font-size: 0.9em;
 }
-
-footer p {
-    margin-bottom: 15px;
-}
-
 footer nav a {
-    color: var(--text-light);
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
+    color: white;
 }
-
 footer nav a:hover {
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
 }
 
-
-/* Responsividade */
+/* Responsividade básica */
 @media (max-width: 768px) {
     .hero-section h1 {
-        font-size: 2.5em;
+        font-size: 3em;
     }
-    .hero-section .tagline {
-        font-size: 1.1em;
+    .stats-grid {
+        grid-template-columns: 1fr;
     }
-    .features-grid, .plans-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
-    }
-    .plan-card.featured-plan {
-        transform: scale(1.01); /* Menor escala no mobile */
-    }
-    h1 { font-size: 2.2em; }
-    h2 { font-size: 1.8em; }
-    h3 { font-size: 1.3em; }
-
-    footer nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 20px;
-    }
-    footer nav a {
-        margin: 5px 8px;
+    .plans-grid {
+        grid-template-columns: 1fr;
     }
 }
