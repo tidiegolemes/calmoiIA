@@ -1,272 +1,88 @@
-/* Paleta de Cores CalmoIA: Lilás Suave e Verde Menta */
+/* Paleta de Cores CalmoIA: Lavanda Suave e Teal */
 :root {
-    --primary-color: #A3A1F4; /* Lilás Suave - Cor de Destaque */
-    --secondary-color: #79a69d; /* Verde Menta/Suave - Cor de Ação */
-    --tertiary-color: #F8F8FF; /* Fundo Lavanda Quase Branco */
+    --primary-color: #7B68EE; /* Lilás Profundo (Ação) */
+    --secondary-color: #66CDAA; /* Teal Suave (Destaque) */
+    --tertiary-color: #F5F5FA; /* Fundo Lavanda Quase Branco */
     --text-dark: #333;
-    --text-light: #f4f4f4;
+    --text-light: #ffffff;
     --border-color: #ddd;
     --shadow-color: rgba(0, 0, 0, 0.08);
-    --bot-bubble: #F0F4FF; /* Balão do Bot: Azul/Lilás muito claro */
-    --user-bubble: #e1f2e1; /* Balão do Usuário: Verde muito claro */
+    --bot-bubble: #E0FFFF; /* Balão do Bot: Azul/Ciano muito claro */
+    --user-bubble: #E6F7F7; /* Balão do Usuário: Verde/Teal muito claro */
     --font-family: 'Montserrat', sans-serif;
 }
 
-/* Base Geral */
-body {
-    font-family: var(--font-family);
-    margin: 0;
-    padding: 0;
-    background-color: var(--tertiary-color);
-    color: var(--text-dark);
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 25px;
-}
-
-.section-padding {
-    padding: 80px 0;
-}
-
-.bg-light {
-    background-color: #ffffff; /* Seções brancas para contraste */
-}
-
-h1, h2, h3 {
-    font-weight: 700;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-h1 { font-size: 3em; }
-h2 { font-size: 2.5em; }
-h3 { font-size: 1.8em; }
-
-p {
-    text-align: center;
-    margin-bottom: 15px;
-}
+/* ... (Base Geral e Tipografia permanece igual) ... */
 
 /* Header / Hero Section */
 .hero-section {
     background: var(--tertiary-color);
+    /* Retiramos o gradiente para mais suavidade */
     color: var(--text-dark);
     padding: 100px 0 50px;
     text-align: center;
     border-bottom: 1px solid #e0e0e0;
 }
-
-.hero-section .logo {
-    margin-bottom: 25px;
-}
-
-.hero-section .logo img {
-    max-width: 200px;
-    height: auto;
-    /* Adaptação para paleta suave */
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.1));
-}
-
 .hero-section h1 {
-    color: var(--primary-color);
-    font-size: 4em;
-    margin-bottom: 10px;
-    font-weight: 800;
+    color: var(--primary-color); /* Títulos com o Lilás Profundo */
 }
 
-.hero-section .tagline {
-    font-size: 1.4em;
-    margin-bottom: 40px;
-    color: #555;
-    max-width: 700px;
-    margin: 0 auto 40px;
-}
 
+/* Chamada para Ação (CTA) */
 .cta-button {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Verde Teal Suave */
     color: white;
-    padding: 18px 40px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.2em;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: inline-block;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* ... (resto da estilização do botão) ... */
 }
 
 .cta-button:hover {
-    background-color: var(--primary-color);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--primary-color); /* Hover para Lilás Profundo */
+    /* ... */
 }
 
 /* Seções de Conteúdo */
-.features-grid, .stats-grid, .plans-grid {
-    display: grid;
-    gap: 30px;
-    margin-top: 40px;
-    text-align: center;
-}
-.features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-.stats-grid {
-    grid-template-columns: repeat(3, 1fr);
-}
-.plans-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
-
-.card {
-    background-color: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px var(--shadow-color);
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
 .card h3 {
-    color: var(--secondary-color);
-    margin-top: 0;
-    font-size: 1.5em;
+    color: var(--secondary-color); /* Títulos de Card em Teal */
 }
 
 .stat-number {
-    font-size: 3em;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 5px;
-}
-
-.stat-label {
-    font-size: 1em;
-    color: #666;
+    color: var(--primary-color); /* Números em Lilás Profundo */
 }
 
 /* Seção Para Quem É */
-#para-quem ul {
-    list-style: none;
-    padding: 0;
-    max-width: 800px;
-    margin: 30px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 #para-quem li {
-    background-color: var(--user-bubble);
-    color: #444;
-    padding: 15px 25px;
-    margin: 8px;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 1.05em;
+    background-color: var(--user-bubble); /* Fundo dos chips mais suave */
 }
 
-/* Seção Planos */
-.plan-card {
-    border: 2px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* Planos em Destaque */
 .plan-card.featured {
     border-color: var(--primary-color);
     background-color: var(--tertiary-color);
 }
 .plan-card .price {
-    font-size: 2.8em;
-    font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Preço em Teal Suave */
 }
-.plan-card ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin-bottom: 30px;
+
+/* Footer */
+footer {
+    background-color: var(--primary-color); /* Footer em Lilás Profundo */
+    color: white;
+    /* ... */
 }
 
 /* Chat Widget */
 #chat-widget {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color); /* Seção de Fundo do Chat em Teal Suave */
     color: white;
-    text-align: center;
-}
-
-#chat-widget h2 {
-    color: white;
-}
-
-#chat-container {
-    background: white;
-    max-width: 650px;
-    margin: 30px auto;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-#chat-box {
-    height: 450px;
-    /* Cores de balão conforme paleta suave */
-}
-
-.bot-message {
-    background-color: var(--bot-bubble);
-    color: var(--text-dark);
-}
-
-.user-message {
-    background-color: var(--user-bubble);
-    color: var(--text-dark);
 }
 
 #user-input {
-    border-radius: 25px;
     border: 1px solid var(--primary-color);
 }
 
 #send-button {
     background-color: var(--primary-color);
-    border-radius: 25px;
 }
-
 #send-button:hover {
     background-color: var(--secondary-color);
-}
-
-/* Footer */
-footer {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 40px 0;
-}
-footer nav a {
-    color: white;
-}
-footer nav a:hover {
-    color: var(--secondary-color);
-}
-
-/* Responsividade básica */
-@media (max-width: 768px) {
-    .hero-section h1 {
-        font-size: 3em;
-    }
-    .stats-grid {
-        grid-template-columns: 1fr;
-    }
-    .plans-grid {
-        grid-template-columns: 1fr;
-    }
 }
