@@ -1,14 +1,12 @@
-/* Paleta de Cores CalmoIA: Lavanda Suave e Teal (Versão Final de Layout) */
+/* Paleta de Cores CalmoIA: Lavanda Suave e Teal (Versão Final de Layout e Cor) */
 :root {
     --primary-color: #7B68EE; /* Lilás Profundo (Ação, Títulos) */
     --secondary-color: #66CDAA; /* Teal Suave (Destaque, CTAs, Preços) */
     --tertiary-color: #F5F5FA; /* Fundo Lavanda Quase Branco */
     --text-dark: #333;
     --text-light: #ffffff;
-    --border-color: #e0e0e0;
+    --border-color: #ddd;
     --shadow-color: rgba(0, 0, 0, 0.08);
-    --bot-bubble: #E0FFFF; /* Balão do Bot: Azul/Ciano muito claro */
-    --user-bubble: #E6F7F7; /* Balão do Usuário: Verde/Teal muito claro */
     --font-family: 'Montserrat', sans-serif;
 }
 
@@ -24,8 +22,6 @@ body {
     background-color: var(--tertiary-color);
     color: var(--text-dark);
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -60,29 +56,17 @@ p {
     color: #555;
 }
 
-/* Header / Hero Section */
+/* --- Hero Section --- */
 .hero-section {
     background: var(--tertiary-color);
     padding: 100px 0 50px;
     text-align: center;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.hero-section .logo {
-    margin-bottom: 25px;
-}
-
-.hero-section .logo svg { /* Estilo para o SVG da logo */
-    max-width: 200px;
-    height: 60px;
-    display: block;
-    margin: 0 auto;
 }
 
 .hero-section h1 {
     color: var(--primary-color);
     font-weight: 800;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto 20px;
 }
 
@@ -107,45 +91,35 @@ p {
     transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .cta-button:hover {
     background-color: var(--primary-color);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
 }
-
 .secondary-cta {
     background-color: var(--primary-color);
 }
 .secondary-cta:hover {
     background-color: var(--secondary-color);
 }
+.small-text {
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 15px;
+}
 
-/* Grids Gerais */
+/* --- Grids e Cards --- */
 .stats-grid, .features-grid, .plans-grid, .target-audience-grid {
     display: grid;
     gap: 30px;
     margin-top: 40px;
-    text-align: center;
 }
 
-.stats-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
+.stats-grid { grid-template-columns: repeat(3, 1fr); }
+.features-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.target-audience-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.plans-grid { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
 
-.features-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.target-audience-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.plans-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-}
-
-/* Cards (Elementos com fundo branco e sombra) */
 .card {
     background-color: white;
     padding: 30px;
@@ -153,14 +127,20 @@ p {
     box-shadow: 0 4px 10px var(--shadow-color);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Para espaçar bem o conteúdo */
     align-items: center;
-    height: 100%; /* Garante altura uniforme */
+    text-align: center;
     transition: transform 0.2s ease-in-out;
+    height: 100%;
 }
-.card:hover {
-    transform: translateY(-5px);
+.card:hover { transform: translateY(-5px); }
+
+/* Seção Sinais/Target (Ícones) */
+.target-icon {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
+.mt-4 { margin-top: 40px; }
 
 /* Seção Resultados */
 .stat-number {
@@ -169,184 +149,49 @@ p {
     color: var(--primary-color);
     margin-bottom: 5px;
 }
-.stat-label {
-    font-size: 1.1em;
-    color: #666;
-}
+.stat-label { font-size: 1.1em; color: #666; }
 
-/* Seção Como Funciona (Features) */
+/* Seção Benefícios (Ícones) */
 .feature-icon {
     font-size: 3em;
     color: var(--secondary-color);
     margin-bottom: 20px;
 }
-.features-grid h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-/* Seção Para Quem É */
-.target-audience-grid .card {
-    padding: 25px;
-}
-.target-icon {
-    font-size: 2.5em;
-    color: var(--secondary-color);
-    margin-bottom: 15px;
-}
-.target-item p {
-    font-size: 1em;
-    color: #444;
-}
-
-/* Seção Confiança */
-.trust-icons {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-.trust-icon {
-    font-size: 3em;
-    color: var(--primary-color);
-    opacity: 0.7;
-}
-
-/* Seção Testemunhos */
-.testimonial-card {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 40px;
-    font-style: italic;
-    font-size: 1.2em;
-    color: #444;
-}
-.testimonial-card .author {
-    font-style: normal;
-    font-weight: 600;
-    margin-top: 20px;
-    font-size: 1em;
-    color: var(--primary-color);
-}
+.features-grid h3 { color: var(--primary-color); margin-bottom: 15px; }
 
 /* Seção Planos */
-.plan-card {
-    border: 2px solid var(--border-color);
+.plan-card { border: 2px solid var(--border-color); }
+.plan-card.featured { border-color: var(--primary-color); background-color: var(--tertiary-color); }
+.plan-card h3 { color: var(--primary-color); margin-top: 15px; }
+.plan-card .price { font-size: 2.8em; font-weight: 700; color: var(--secondary-color); margin-bottom: 10px; }
+.plan-card .price span { font-size: 0.5em; font-weight: 400; color: #666; }
+.plan-card .discount { color: #e74c3c; font-weight: 600; margin-bottom: 20px; }
+.plan-card ul { list-style: none; padding: 0; text-align: left; margin-bottom: 30px; width: 100%; max-width: 250px; }
+.plan-card li { font-size: 1em; margin-bottom: 10px; display: flex; align-items: center; color: #444; }
+.plan-card li .fas { color: var(--secondary-color); margin-right: 10px; }
+
+/* Seção Final CTA */
+.final-cta-section {
+    background: var(--primary-color);
+    color: white;
 }
-.plan-card.featured {
-    border-color: var(--primary-color);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.final-cta-section h2, .final-cta-section p, .final-cta-section .fas {
+    color: white;
 }
-.plan-card h3 {
+.final-cta-section .cta-button {
+    background-color: white;
     color: var(--primary-color);
-    margin-top: 15px;
+    font-size: 1.4em;
+    padding: 20px 50px;
+    margin-top: 20px;
 }
-.plan-card .price {
-    font-size: 2.8em;
-    font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-}
-.plan-card .price span {
-    font-size: 0.5em;
-    font-weight: 400;
-    color: #666;
-}
-.plan-card .discount {
-    color: #e74c3c;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-.plan-card ul {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    margin-bottom: 30px;
-    width: 100%;
-    max-width: 250px; /* Limita largura da lista */
-}
-.plan-card li {
-    font-size: 1em;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    color: #444;
-}
-.plan-card li .fas {
-    color: var(--secondary-color);
-    margin-right: 10px;
-}
-
-/* Chat Widget */
-#chat-widget {
+.final-cta-section .cta-button:hover {
     background-color: var(--secondary-color);
     color: white;
 }
-#chat-widget h2, #chat-widget p {
-    color: white;
-}
-#chat-container {
-    max-width: 650px;
-    margin: 30px auto;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-#chat-box {
-    height: 450px;
-    overflow-y: auto;
-    border: 1px solid var(--border-color);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    background-color: #fcfcfc;
-}
-.message {
-    padding: 12px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    max-width: 80%;
-    clear: both;
-    font-size: 0.95em;
-    line-height: 1.4;
-}
-.bot-message {
-    background-color: var(--bot-bubble);
-    float: left;
-    border-top-left-radius: 5px;
-    color: var(--text-dark);
-}
-.user-message {
-    background-color: var(--user-bubble);
-    float: right;
-    border-top-right-radius: 5px;
-    color: var(--text-dark);
-}
-.chat-input-area {
-    display: flex;
-    align-items: center;
-}
-#user-input {
-    flex-grow: 1;
-    padding: 12px;
-    border: 1px solid var(--primary-color);
-    border-radius: 25px;
-    margin-right: 10px;
-    font-size: 1em;
-}
-#send-button {
-    padding: 12px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-#send-button:hover {
-    background-color: var(--secondary-color);
-}
 
-/* Footer */
+
+/* --- Footer --- */
 footer {
     background-color: var(--primary-color);
     color: white;
@@ -354,64 +199,7 @@ footer {
     text-align: center;
     font-size: 0.9em;
 }
-.footer-links {
-    margin-bottom: 20px;
-}
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s ease;
-}
-.footer-links a:hover {
-    color: var(--secondary-color);
-}
-footer p {
-    margin-bottom: 20px;
-    color: rgba(255, 255, 255, 0.8);
-}
-.social-media a {
-    color: white;
-    font-size: 1.5em;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-.social-media a:hover {
-    color: var(--secondary-color);
-}
-
-/* Responsividade */
-@media (max-width: 992px) {
-    h1 { font-size: 3em; }
-    h2 { font-size: 2em; }
-    h3 { font-size: 1.6em; }
-    .hero-section { padding: 80px 0 40px; }
-    .stat-number { font-size: 3em; }
-    .feature-icon, .target-icon, .trust-icon { font-size: 2.5em; }
-}
-
-@media (max-width: 768px) {
-    h1 { font-size: 2.5em; }
-    h2 { font-size: 1.8em; }
-    .stats-grid, .features-grid, .plans-grid, .target-audience-grid {
-        grid-template-columns: 1fr;
-    }
-    .section-padding { padding: 50px 0; }
-    .testimonial-card { padding: 30px; font-size: 1.1em; }
-    .footer-links a { margin: 0 8px; }
-}
-
-@media (max-width: 480px) {
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.6em; margin-bottom: 20px;}
-    h3 { font-size: 1.4em; }
-    .hero-section { padding: 60px 0 30px; }
-    .tagline { font-size: 1.2em; margin-bottom: 30px; }
-    .cta-button { padding: 12px 25px; font-size: 1em; }
-    .stat-number { font-size: 2.5em; }
-    .feature-icon, .target-icon, .trust-icon { font-size: 2em; }
-    .plan-card .price { font-size: 2.2em; }
-    .chat-input-area { flex-direction: column; }
-    #user-input { margin-right: 0; margin-bottom: 10px; width: 100%; }
-    #send-button { width: 100%; }
-}
+.footer-links { margin-bottom: 20px; }
+.footer-links a { color: white; text-decoration: none; margin: 0 15px; transition: color 0.3s ease; }
+.footer-links a:hover { color: var(--secondary-color); }
+footer p { color: rgba(255, 255, 255, 0.8); }
