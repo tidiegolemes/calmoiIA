@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatBox = document.getElementById('chat-box');
     const userInput = document.getElementById('user-input');
     const sendButton = document.getElementById('send-button');
-    const ctaButton = document.querySelector('.cta-button');
 
     // Função para adicionar uma mensagem à tela
     function addMessage(text, sender) {
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
         messageDiv.textContent = text;
         chatBox.appendChild(messageDiv);
-        // Rola para a mensagem mais recente
         chatBox.scrollTop = chatBox.scrollHeight;
     }
 
@@ -21,16 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (text === "") return;
 
         addMessage(text, 'user');
-        userInput.value = ''; // Limpa o campo de entrada
+        userInput.value = '';
 
-        // ----------------------------------------------------------------
-        // AQUI ESTARIA O CÓDIGO REAL DE CONEXÃO COM A API DO DIALOGFLOW
-        // Por enquanto, é uma RESPOSTA SIMULADA de TCC:
-        // ----------------------------------------------------------------
-        
         let botResponse = 'Obrigado por compartilhar! Para darmos continuidade à nossa sessão de TCC, qual é o fato ou a evidência que sustenta esse pensamento?';
-        
-        // Simulação de resposta mais acolhedora e com base no input
         const lowerCaseText = text.toLowerCase();
 
         if (lowerCaseText.includes('olá') || lowerCaseText.includes('oi') || lowerCaseText.includes('tudo bem')) {
@@ -45,15 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
             botResponse = 'Perfeito! Vamos começar. Qual é o pensamento negativo ou a crença que está te incomodando agora?';
         }
 
-
         setTimeout(() => {
             addMessage(botResponse, 'bot');
-        }, 800); // Simula um pequeno tempo de processamento
+        }, 800);
     }
 
     sendButton.addEventListener('click', sendMessage);
 
-    // Permite enviar mensagem pressionando Enter
     userInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             sendMessage();
@@ -61,8 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Smooth scrolling para o botão "Comece Agora" no hero
-    ctaButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('chat-widget').scrollIntoView({ behavior: 'smooth' });
+    document.querySelectorAll('button[data-scroll]').forEach(button => {
+        button.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('data-scroll');
+            if (targetId) {
+                e.preventDefault();
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+    document.querySelectorAll('footer .footer-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (this.hash && this.hash.startsWith('#')) {
+                e.preventDefault();
+                document.querySelector(this.hash).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
     });
 });
